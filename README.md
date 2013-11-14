@@ -12,6 +12,11 @@ This module provides bindings for libarchive using either
 [Archive::Libarchive::XS](https://metacpan.org/pod/Archive::Libarchive::XS) or [Archive::Libarchive::FFI](https://metacpan.org/pod/Archive::Libarchive::FFI).
 The interface is identical either way.
 
+# SEE ALSO
+
+- [Archive::Libarchive::XS](https://metacpan.org/pod/Archive::Libarchive::XS)
+- [Archive::Libarchive::FFI](https://metacpan.org/pod/Archive::Libarchive::FFI)
+
 # AUTHOR
 
 Graham Ollis <plicease@cpan.org>
