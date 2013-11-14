@@ -1,0 +1,7 @@
+Archive::Libarchive::FFI
+Archive::Libarchive::XS
+Exporter
+File::Spec
+FindBin
+Module::Build
+Test::More
