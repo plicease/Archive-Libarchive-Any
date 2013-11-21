@@ -12,6 +12,10 @@ sub new
   {
     $args{requires}->{'Archive::Libarchive::FFI'} = 0;
   }
+  elsif(defined $ENV{ARCHIVE_LIBARCHIVE_ANY})
+  {
+    $args{requires}->{"Archive::Libarchive::$ENV{ARCHIVE_LIBARCHIVE_ANY}"} = 0;
+  }
   else
   {
     $args{requires}->{'Archive::Libarchive::XS'} = 0;
