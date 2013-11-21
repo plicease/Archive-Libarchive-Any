@@ -1,7 +1,8 @@
 Archive::Libarchive::FFI
 Archive::Libarchive::XS
-Exporter
+File::Basename
 File::Spec
+File::Temp
 FindBin
 Module::Build
 Test::More

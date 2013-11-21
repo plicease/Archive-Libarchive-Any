@@ -12,10 +12,56 @@ This module provides bindings for libarchive using either
 [Archive::Libarchive::XS](https://metacpan.org/pod/Archive::Libarchive::XS) or [Archive::Libarchive::FFI](https://metacpan.org/pod/Archive::Libarchive::FFI).
 The interface is identical either way.
 
+The preference and install and run time is at the discretion
+of the author of this distribution, and is subject to change
+with reasonable notice in the documentation and Changes file.
+
+Generally the XS version will be preferred, and the FFI
+version will be used if the XS version is unavailable.
+
+If you set the environment variable ARCHIVE\_LIBARCHIVE\_ANY
+to XS or FFI it will prefer that implementation over the
+other (this is used both at install and runtime).
+
 # SEE ALSO
+
+The intent of this module is to provide a low level fairly thin direct
+interface to libarchive, on which a more Perlish OO layer could easily
+be written.
 
 - [Archive::Libarchive::XS](https://metacpan.org/pod/Archive::Libarchive::XS)
 - [Archive::Libarchive::FFI](https://metacpan.org/pod/Archive::Libarchive::FFI)
+
+    Both of these provide the same API to libarchive via [Alien::Libarchive](https://metacpan.org/pod/Alien::Libarchive),
+    but the bindings are implemented in XS for one and via [FFI::Sweet](https://metacpan.org/pod/FFI::Sweet) for
+    the other.
+
+- [Archive::Libarchive::Any](https://metacpan.org/pod/Archive::Libarchive::Any)
+
+    Offers whichever is available, either the XS or FFI version.  The
+    actual algorithm as to which is picked is subject to change, depending
+    on with version seems to be the most reliable.
+
+- [Archive::Peek::Libarchive](https://metacpan.org/pod/Archive::Peek::Libarchive)
+- [Archive::Extract::Libarchive](https://metacpan.org/pod/Archive::Extract::Libarchive)
+
+    Both of these provide a higher level, less complete perlish interface
+    to libarchive.
+
+- [Archive::Tar](https://metacpan.org/pod/Archive::Tar)
+- [Archive::Tar::Wrapper](https://metacpan.org/pod/Archive::Tar::Wrapper)
+
+    Just some of the many modules on CPAN that will read/write tar archives.
+
+- [Archive::Zip](https://metacpan.org/pod/Archive::Zip)
+
+    Just one of the many modules on CPAN that will read/write zip archives.
+
+- [Archive::Any](https://metacpan.org/pod/Archive::Any)
+
+    A module attempts to read/write multiple formats using different methods
+    depending on what perl modules are installed, and preferring pure perl
+    modules.
 
 # AUTHOR
 
