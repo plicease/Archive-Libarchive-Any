@@ -6,3 +6,5 @@ File::Temp
 FindBin
 Module::Build
 Test::More
+open
+utf8

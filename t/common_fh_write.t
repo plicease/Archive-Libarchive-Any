@@ -29,7 +29,9 @@ SKIP: {
 $r = eval { archive_write_set_format_pax_restricted($a) };
 is $r, ARCHIVE_OK, 'archive_write_set_format_pax_restricted';
 
-$r = eval { archive_write_open_filename($a, $fn) };
+my $fh;
+open $fh, '>', $fn;
+$r = archive_write_open_fh($a, $fh);
 is $r, ARCHIVE_OK, 'archive_write_open_filename';
 
 foreach my $name (qw( foo bar baz ))
@@ -70,6 +72,8 @@ is $r, ARCHIVE_OK, 'archive_write_close';
 
 $r = eval { archive_write_free($a) };
 is $r, ARCHIVE_OK, 'archive_write_free';
+
+close $fh;
 
 do {
   my $actual = '';
