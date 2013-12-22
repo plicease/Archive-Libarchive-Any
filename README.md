@@ -1,4 +1,4 @@
-# Archive::Libarchive::Any
+# Archive::Libarchive::Any [![Build Status](https://secure.travis-ci.org/plicease/Archive-Libarchive-Any.png)](http://travis-ci.org/plicease/Archive-Libarchive-Any)
 
 Perl bindings to libarchive
 
