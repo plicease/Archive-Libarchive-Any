@@ -10,6 +10,7 @@ install:
   - cpanm -n Pod::Abstract
   # needed for stuff that is still currently not on CPAN
   - cpanm Dist::Zilla::Plugin::InsertExample
+  - cpanm Dist::Zilla::Plugin::MathInt64
   - cpanm Dist::Zilla::Plugin::PPPort
   # workaround for gh#31 (Archive::Libarchive::XS)
   - cpanm -n http://cpan.metacpan.org/authors/id/R/RJ/RJBS/Mixin-Linewise-0.102.tar.gz
