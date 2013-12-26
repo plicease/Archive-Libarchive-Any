@@ -3,6 +3,8 @@ use warnings;
 use v5.10;
 use Path::Class qw( file dir );
 
+exit if $ENV{TRAVIS_BUILD_ID};
+
 do { # import from inc
   foreach my $basename (qw( SeeAlso.pm constants.txt functions.txt ))
   {
