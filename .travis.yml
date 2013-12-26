@@ -5,6 +5,7 @@ install:
   - dzil authordeps --missing |cpanm -n
   - cpanm -n Alien::Libarchive
   - cpanm -n Test::CPAN::Changes Test::EOL Test::Fixme Test::NoTabs Test::Pod::Spelling::CommonMistakes Test::Spelling Test::Strict Test::Version || true
+  - cpanm -n Pod::Abstract
   - git clone https://github.com/merrilymeredith/p5-FFI-Sweet.git && cd p5-FFI-Sweet && dzil install && cd .. && rm -rf p5-FFI-Sweet
   - git clone https://github.com/plicease/FFI-Util.git && cd FFI-Util && dzil install && cd .. && rm -rf FFI-Util
   - git clone https://github.com/plicease/Archive-Libarchive-$ARCHIVE_LIBARCHIVE_ANY.git && cd Archive-Libarchive-$ARCHIVE_LIBARCHIVE_ANY && dzil install --install-command 'cpanm -n .' && cd .. && rm -rf Archive-Libarchive-$ARCHIVE_LIBARCHIVE_ANY
