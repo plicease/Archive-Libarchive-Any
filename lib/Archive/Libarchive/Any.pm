@@ -45,7 +45,8 @@ do {
     };
     eval $str;
     if($@) {
-      #warn $@;
+      warn "Archive::Libarchive::$impl\: $@"
+        if $ENV{ARCHIVE_LIBARCHIVE_ANY_VERBOSE};
     } else {
       $ok = 1;
       last;
