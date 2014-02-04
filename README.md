@@ -19,8 +19,8 @@ with reasonable notice in the documentation and Changes file.
 Generally the XS version will be preferred, and the FFI
 version will be used if the XS version is unavailable.
 
-If you set the environment variable ARCHIVE\_LIBARCHIVE\_ANY
-to XS or FFI it will prefer that implementation over the
+If you set the environment variable `ARCHIVE_LIBARCHIVE_ANY`
+to `XS` or `FFI` it will prefer that implementation over the
 other (this is used both at install and runtime).
 
 # SEE ALSO
