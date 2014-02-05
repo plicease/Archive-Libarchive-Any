@@ -10,7 +10,7 @@ install:
   - cpanm -n Pod::Abstract
   - cpanm -n Mojolicious
   - cpanm -n FFI::Util
-  - cpanm -n Archive:::Libarchive::$ARCHIVE_LIBARCHIVE_ANY
+  - cpanm -n Archive::Libarchive::$ARCHIVE_LIBARCHIVE_ANY
 
 perl:
   - "5.10"
