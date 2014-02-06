@@ -1,3 +1,9 @@
+package
+  Archive::Libarchive::Any::_version;
+
+# PODNAME: Archive::Libarchive::Any
+# VERSION
+
 use strict;
 use warnings;
 
@@ -12,8 +18,6 @@ BEGIN {
   {
     next if $impl eq 'Any';
     my $str = qq{
-      #use Archive::Libarchive::$impl ':all';
-      #\*import = \\\&Archive::Libarchive::$impl\::import;
       use Archive::Libarchive::$impl;
       *Archive::Libarchive::Any:: = *Archive::Libarchive::$impl\::;
     };
@@ -32,7 +36,12 @@ BEGIN {
 package Archive::Libarchive::Any;
 
 # ABSTRACT: Perl bindings to libarchive
+
+if(0) {
+
 # VERSION
+
+}
 
 =head1 SYNOPSIS
 
