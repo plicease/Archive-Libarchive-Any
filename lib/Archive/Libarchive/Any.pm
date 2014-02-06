@@ -1,7 +1,35 @@
-package Archive::Libarchive::Any;
-
 use strict;
 use warnings;
+
+BEGIN {
+  my $ok = 0;
+  
+  my @list = qw( XS FFI );
+  unshift @list, $ENV{ARCHIVE_LIBARCHIVE_ANY}
+    if defined $ENV{ARCHIVE_LIBARCHIVE_ANY};
+  
+  foreach my $impl (@list)
+  {
+    next if $impl eq 'Any';
+    my $str = qq{
+      #use Archive::Libarchive::$impl ':all';
+      #\*import = \\\&Archive::Libarchive::$impl\::import;
+      use Archive::Libarchive::$impl;
+      *Archive::Libarchive::Any:: = *Archive::Libarchive::$impl\::;
+    };
+    eval $str;
+    if($@) {
+      warn "Archive::Libarchive::$impl\: $@"
+        if $ENV{ARCHIVE_LIBARCHIVE_ANY_VERBOSE};
+    } else {
+      $ok = 1;
+      last;
+    }
+  }
+  die "could not find an appropriate libarchive implementation" unless $ok;
+};
+
+package Archive::Libarchive::Any;
 
 # ABSTRACT: Perl bindings to libarchive
 # VERSION
@@ -28,31 +56,5 @@ to C<XS> or C<FFI> it will prefer that implementation over the
 other (this is used both at install and runtime).
 
 =cut
-
-do {
-  my $ok = 0;
-  
-  my @list = qw( XS FFI );
-  unshift @list, $ENV{ARCHIVE_LIBARCHIVE_ANY}
-    if defined $ENV{ARCHIVE_LIBARCHIVE_ANY};
-  
-  foreach my $impl (@list)
-  {
-    next if $impl eq 'Any';
-    my $str = qq{
-      use Archive::Libarchive::$impl ':all';
-      \*import = \\\&Archive::Libarchive::$impl\::import;
-    };
-    eval $str;
-    if($@) {
-      warn "Archive::Libarchive::$impl\: $@"
-        if $ENV{ARCHIVE_LIBARCHIVE_ANY_VERBOSE};
-    } else {
-      $ok = 1;
-      last;
-    }
-  }
-  die "could not find an appropriate libarchive implementation" unless $ok;
-};
 
 1;
