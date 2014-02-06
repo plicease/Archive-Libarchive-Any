@@ -23,6 +23,15 @@ If you set the environment variable `ARCHIVE_LIBARCHIVE_ANY`
 to `XS` or `FFI` it will prefer that implementation over the
 other (this is used both at install and runtime).
 
+# SUPPORT
+
+If you find bugs, please open an issue on the project GitHub repository:
+
+[https://github.com/plicease/Archive-Libarchive-Any/issues?state=open](https://github.com/plicease/Archive-Libarchive-Any/issues?state=open)
+
+If you have a fix, please open a pull request.  You can see the CONTRIBUTING
+file for traps, hints and pitfalls.
+
 # SEE ALSO
 
 The intent of this module is to provide a low level fairly thin direct
