@@ -18,7 +18,14 @@ sub new
   }
   else
   {
-    $args{requires}->{'Archive::Libarchive::XS'} = 0;
+    if($^O eq 'midnightbsd')
+    {
+      $args{requires}->{'Archive::Libarchive::FFI'} = 0;
+    }
+    else
+    {
+      $args{requires}->{'Archive::Libarchive::XS'} = 0;
+    }
   }
   
   $class->SUPER::new(%args);

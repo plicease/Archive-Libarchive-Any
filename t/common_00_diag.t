@@ -145,9 +145,9 @@ diag 'write formats:';
 foreach my $format (sort grep { s/^archive_write_set_format_// } keys %Archive::Libarchive::Any::)
 {
   next if $format =~ /^(program|by_name)$/;
-  if(Archive::Libarchive::Any::archive_version_number() < 3000000 && "Archive::Libarchive::Any" =~ /ffi/i)
+  if(Archive::Libarchive::Any::archive_version_number() < 3000000 && "Archive::Libarchive::Any" =~ /(ffi|any)/i)
   {
-    if(($format =~ /^(ar_bsd|ar_svr4|cpio|cpio_newc|mtree)$/ && $^O eq 'freebsd') || $^O eq 'netbsd')
+    if(($format =~ /^(ar_bsd|ar_svr4|cpio|cpio_newc|mtree)$/ && $^O eq 'freebsd') || $^O eq 'netbsd' || $^O eq 'midnightbsd')
     {
       diag sprintf "%-15s %s", $format, 'skip test';
       next;
