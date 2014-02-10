@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.07      2014-02-10 18:56:56 -0500
   - alias namespace instead of copying to conserve memory
   - prefer FFI for MidnightBSD where as it is more reliable
   - update tests with Archive::Libarchive::XS/FFI 0.07
