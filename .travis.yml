@@ -20,7 +20,7 @@ perl:
   - "5.19"
 
 script:
-  - cpanm https://dist.wdlabs.com/Alien-Libarchive-0.18_06.tar.gz
+  - cpanm -v https://dist.wdlabs.com/Alien-Libarchive-0.18_06.tar.gz
   - dzil test -v
 
 env:
