@@ -19,7 +19,7 @@ perl:
   - "5.19"
 
 script:
-  - cpanm -v -n https://dist.wdlabs.com/Alien-Libarchive-0.18_06.tar.gz
+  - cpanm -v -n Alien::Libarchive
   - cpanm -v -v Archive::Libarchive::$ARCHIVE_LIBARCHIVE_ANY
   - dzil test -v
 
