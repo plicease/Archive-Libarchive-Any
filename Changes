@@ -2,6 +2,8 @@ Revision history for {{$dist->name}}
 
 {{$NEXT}}
 
+0.0801    2014-11-05 22:48:27 -0500
+
 0.0800    2014-06-10 16:34:40 -0400
   - update tests with Archive::Libarchive::XS/FFI 0.0800
 
