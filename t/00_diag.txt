@@ -1,4 +1,3 @@
-Alien::Libarchive
 Archive::Libarchive::FFI
 Archive::Libarchive::XS
 File::Basename
