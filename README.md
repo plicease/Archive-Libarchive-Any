@@ -32,6 +32,12 @@ If you find bugs, please open an issue on the project GitHub repository:
 If you have a fix, please open a pull request.  You can see the CONTRIBUTING
 file for traps, hints and pitfalls.
 
+# SEE ALSO
+
+The intent of this module is to provide a low level fairly thin direct
+interface to libarchive, on which a more Perlish OO layer could easily
+be written.
+
 - [Archive::Libarchive::XS](https://metacpan.org/pod/Archive::Libarchive::XS)
 - [Archive::Libarchive::FFI](https://metacpan.org/pod/Archive::Libarchive::FFI)
 
