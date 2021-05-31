@@ -5,9 +5,10 @@ use Path::Class qw( file dir );
 
 exit if $ENV{TRAVIS_BUILD_ID};
 exit unless $ENV{USER} eq 'ollisg';
+exit;
 
 do { # import from inc
-  foreach my $basename (qw( SeeAlso.pm constants.txt functions.txt ))
+  foreach my $basename (qw( constants.txt functions.txt ))
   {
     my $source = file(__FILE__)->parent->parent->parent->parent->file('Archive-Libarchive-XS', 'inc', $basename);
     my $dest   = file(__FILE__)->parent->parent->file($basename);

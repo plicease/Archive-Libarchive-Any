@@ -1,10 +1,12 @@
-# Archive::Libarchive::Any [![Build Status](https://secure.travis-ci.org/plicease/Archive-Libarchive-Any.png)](http://travis-ci.org/plicease/Archive-Libarchive-Any)
+# Archive::Libarchive::Any ![linux](https://github.com/plicease/Archive-Libarchive-Any/workflows/linux/badge.svg)
 
 Perl bindings to libarchive
 
 # SYNOPSIS
 
-    use Archive::Libarchive::Any;
+```perl
+use Archive::Libarchive::Any;
+```
 
 # DESCRIPTION
 
