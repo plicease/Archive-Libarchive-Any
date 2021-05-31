@@ -9,11 +9,11 @@ use warnings;
 
 BEGIN {
   my $ok = 0;
-  
+
   my @list = qw( XS FFI );
   unshift @list, $ENV{ARCHIVE_LIBARCHIVE_ANY}
     if defined $ENV{ARCHIVE_LIBARCHIVE_ANY};
-  
+
   foreach my $impl (@list)
   {
     next if $impl eq 'Any';

@@ -16,15 +16,15 @@ do { # import from inc
     $dest->spew(scalar $source->slurp);
   }
 };
-                      
+
 do { # import examples from XS version
 
   my $source = file(__FILE__)->parent->parent->parent->parent->subdir('Archive-Libarchive-XS')->subdir('example');
-  
+
   die "first checkout Archive::Libarchive::XS" unless -d $source;
-  
+
   my $dest = file(__FILE__)->parent->parent->parent->subdir('example');
-  
+
   foreach my $example ($source->children)
   {
     say $example->absolute;
@@ -43,7 +43,7 @@ do { # import examples from XS version
 do { # import tests from XS version
   my $source = file(__FILE__)->parent->parent->parent->parent->subdir('Archive-Libarchive-XS')->subdir('t');
   my $dest = file(__FILE__)->parent->parent->parent->subdir('t');
-  
+
   foreach my $archive ($source->children)
   {
     next if $archive->is_dir;
@@ -51,7 +51,7 @@ do { # import tests from XS version
     say $archive->absolute;
     $dest->file($archive->basename)->spew(scalar $archive->slurp);
   }
-  
+
   foreach my $test ($source->children)
   {
     next if $test->is_dir;
