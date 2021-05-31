@@ -1,4 +1,4 @@
-# Archive::Libarchive::Any ![linux](https://github.com/plicease/Archive-Libarchive-Any/workflows/linux/badge.svg)
+# (Deprecated) Archive::Libarchive::Any ![linux](https://github.com/plicease/Archive-Libarchive-Any/workflows/linux/badge.svg)
 
 Perl bindings to libarchive
 
@@ -9,6 +9,10 @@ use Archive::Libarchive::Any;
 ```
 
 # DESCRIPTION
+
+**NOTE**: This module has been deprecated in favor of [Archive::Libarchive](https://metacpan.org/pod/Archive::Libarchive).
+It provides a better thought out object-oriented interface and is easier
+to maintain.
 
 This module provides bindings for libarchive using either
 [Archive::Libarchive::XS](https://metacpan.org/pod/Archive::Libarchive::XS) or [Archive::Libarchive::FFI](https://metacpan.org/pod/Archive::Libarchive::FFI).

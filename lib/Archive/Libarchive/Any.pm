@@ -1,7 +1,7 @@
 package
   Archive::Libarchive::Any::_version;
 
-# PODNAME: Archive::Libarchive::Any
+# PODNAME: (Deprecated) Archive::Libarchive::Any
 # VERSION
 
 use strict;
@@ -48,6 +48,10 @@ if(0) {
  use Archive::Libarchive::Any;
 
 =head1 DESCRIPTION
+
+B<NOTE>: This module has been deprecated in favor of L<Archive::Libarchive>.
+It provides a better thought out object-oriented interface and is easier
+to maintain.
 
 This module provides bindings for libarchive using either
 L<Archive::Libarchive::XS> or L<Archive::Libarchive::FFI>.
