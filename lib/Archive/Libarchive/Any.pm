@@ -1,7 +1,7 @@
 package
   Archive::Libarchive::Any::_version;
 
-# PODNAME: Archive::Libarchive::Any
+# PODNAME: (Deprecated) Archive::Libarchive::Any
 # VERSION
 
 use strict;
@@ -9,11 +9,11 @@ use warnings;
 
 BEGIN {
   my $ok = 0;
-  
+
   my @list = qw( XS FFI );
   unshift @list, $ENV{ARCHIVE_LIBARCHIVE_ANY}
     if defined $ENV{ARCHIVE_LIBARCHIVE_ANY};
-  
+
   foreach my $impl (@list)
   {
     next if $impl eq 'Any';
@@ -49,6 +49,10 @@ if(0) {
 
 =head1 DESCRIPTION
 
+B<NOTE>: This module has been deprecated in favor of L<Archive::Libarchive>.
+It provides a better thought out object-oriented interface and is easier
+to maintain.
+
 This module provides bindings for libarchive using either
 L<Archive::Libarchive::XS> or L<Archive::Libarchive::FFI>.
 The interface is identical either way.
@@ -72,6 +76,53 @@ L<https://github.com/plicease/Archive-Libarchive-Any/issues?state=open>
 
 If you have a fix, please open a pull request.  You can see the CONTRIBUTING
 file for traps, hints and pitfalls.
+
+=head1 SEE ALSO
+
+The intent of this module is to provide a low level fairly thin direct
+interface to libarchive, on which a more Perlish OO layer could easily
+be written.
+
+=over 4
+
+=item L<Archive::Libarchive::XS>
+
+=item L<Archive::Libarchive::FFI>
+
+Both of these provide the same API to libarchive via L<Alien::Libarchive>,
+but the bindings are implemented in XS for one and via L<FFI::Sweet> for
+the other.
+
+=item L<Archive::Libarchive::Any>
+
+Offers whichever is available, either the XS or FFI version.  The
+actual algorithm as to which is picked is subject to change, depending
+on with version seems to be the most reliable.
+
+=item L<Archive::Peek::Libarchive>
+
+=item L<Archive::Extract::Libarchive>
+
+Both of these provide a higher level, less complete perlish interface
+to libarchive.
+
+=item L<Archive::Tar>
+
+=item L<Archive::Tar::Wrapper>
+
+Just some of the many modules on CPAN that will read/write tar archives.
+
+=item L<Archive::Zip>
+
+Just one of the many modules on CPAN that will read/write zip archives.
+
+=item L<Archive::Any>
+
+A module attempts to read/write multiple formats using different methods
+depending on what perl modules are installed, and preferring pure perl
+modules.
+
+=back
 
 =cut
 
