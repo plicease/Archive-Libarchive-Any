@@ -14,6 +14,11 @@ use Archive::Libarchive::Any;
 It provides a better thought out object-oriented interface and is easier
 to maintain.
 
+**NOTE**: This repository has been archived as it is no longer supported or
+maintained.  You may submitt a ticket at its replacement repository:
+
+- [https://github.com/uperl/Archive-Libarchive/issues](https://github.com/uperl/Archive-Libarchive/issues)
+
 This module provides bindings for libarchive using either
 [Archive::Libarchive::XS](https://metacpan.org/pod/Archive::Libarchive::XS) or [Archive::Libarchive::FFI](https://metacpan.org/pod/Archive::Libarchive::FFI).
 The interface is identical either way.
